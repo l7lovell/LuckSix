@@ -1,0 +1,23 @@
+<!-- historico.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Histórico de Resultados</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Histórico de Resultados</h1>
+        <ul>
+            {% for resultado in historico_resultados %}
+                <li>
+                    Números sorteados: {{ resultado['numeros']|join(', ') }} |
+                    Acertos: {{ resultado['acertos']|join(', ') }} |
+                    Prêmio: R$ {{ resultado['premio'] }}
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>

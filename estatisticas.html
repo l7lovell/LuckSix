@@ -1,0 +1,24 @@
+<!-- estatisticas.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Estatísticas de Números</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Estatísticas de Números</h1>
+        <h2>Números Mais Frequentes</h2>
+        <p>Os números mais frequentemente sorteados são: {{ estatisticas_numeros['mais_frequentes']|join(', ') }}</p>
+
+        <h2>Números Mais Sorteados Juntos</h2>
+        <ul>
+            {% for numeros in estatisticas_numeros['mais_sorteados_juntos'] %}
+                <li>{{ numeros|join(', ') }}</li>
+            {% endfor %}
+        </ul>
+        <!-- Adicione mais estatísticas aqui -->
+    </div>
+</body>
+</html>
